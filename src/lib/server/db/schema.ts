@@ -1,7 +1,10 @@
-import { sqliteTable, text, integer } from 'drizzle-orm/sqlite-core';
+// schema.ts
+import { sqliteTable, text } from 'drizzle-orm/sqlite-core';
 
-export const users = sqliteTable('tblUsers', {
-	id: integer('id').primaryKey({autoIncrement: true}),
-	username: text("username").unique().notNull(),
-	password: text("password").notNull()
+export const tasks = sqliteTable('tblTasks', {
+    task: text('task').notNull(),
+    reason: text('reason').notNull(),
+    dueDate: text('dueDate').notNull(), // Add dueDate field
+    petName: text('petName'), // Add petName field
+    // Remove petType field
 });
