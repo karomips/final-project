@@ -1,8 +1,6 @@
 <script lang="ts">
     import { writable } from 'svelte/store';
     import { onMount } from 'svelte';
-    import { goto } from '$app/navigation'; // Correct import for navigation
-	import { signOut } from '@auth/sveltekit/client';
 
     // Define a type for the task
     interface Task {
@@ -75,12 +73,6 @@
 
     // Store for selected pet name
     let selectedPetName = '';
-
-    // Function to handle sign-out
-    async function handleSignOut() {
-        await signOut(); // Call the signOut function to log the user out
-        goto('/auth/signin'); // Redirect to the sign-in page
-    }
 </script>
 
 <div class="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-8">
@@ -186,15 +178,4 @@
             <p>Pet Name: {$lastAddedTask.petName || 'No Pet'}</p>
         </div>
     {/if}
-</div>
-
-<div class="flex flex-row gap-8 w-full max-w-6xl">
-    <div class="w-full max-w-md">
-            <button 
-                class="rounded-lg bg-red-500 p-4 text-white font-semibold hover:bg-red-600 transition duration-200 ease-in-out" 
-                on:click={handleSignOut}
-            >
-        Sign Out
-    </button>
-</div>
 </div>
