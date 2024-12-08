@@ -1,3 +1,250 @@
+/* Base styles */
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+/* Global Body Styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #383636;
+    color: #2d3748;
+    line-height: 1.6;
+    background-image: url('https://source.unsplash.com/random'); /* Default dynamic background */
+    background-size: cover; /* Cover the entire page */
+    background-position: center; /* Center the background */
+    background-attachment: fixed; /* Ensure background stays fixed during scrolling */
+    transition: background-image 1s ease-in-out;
+}
+
+/* Navbar Styling */
+nav {
+    background-color: rgba(74, 144, 226, 0.8);
+    box-shadow: 0 2px 8px rgba(206, 197, 197, 0.1);
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Navbar Logo */
+nav h1 {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+nav h1:hover {
+    color: #e0f7fa;
+}
+
+/* Button Styles */
+button {
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #34D399; /* Green hover color */
+    transform: translateY(-2px); /* Lift effect */
+}
+
+/* Task Card Styling */
+.task-card {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 24px;
+    margin-top: 20px;
+    transition: transform 0.2s ease;
+}
+
+.task-card:hover {
+    transform: scale(1.02); /* Slightly enlarge on hover */
+}
+
+.task-card h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #2b6cb0; /* Blue header */
+}
+
+/* Input Fields Styling */
+input,
+select {
+    background-color: #edf2f7;
+    border-radius: 8px;
+    padding: 12px;
+    border: 2px solid #cbd5e0;
+    width: 100%;
+    font-size: 1rem;
+    color: #4a5568;
+    transition: border-color 0.3s ease;
+}
+
+input:focus,
+select:focus {
+    border-color: #4A90E2; /* Focused blue border */
+    outline: none;
+}
+
+/* Button Inside Forms */
+button[type='button'] {
+    background-color: #38b2ac; /* Teal button for form submission */
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    margin-top: 10px;
+    width: 100%;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button[type='button']:hover {
+    background-color: #319795; /* Darker teal on hover */
+    transform: translateY(-2px); /* Lift effect */
+}
+
+/* Task List Styling */
+.task-list {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 24px;
+    margin-top: 20px;
+}
+
+.task-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.task-list li {
+    background-color: #f7fafc;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.task-list li:hover {
+    background-color: #e2e8f0; /* Darker background on hover */
+}
+
+/* Task Text Styling */
+.task-list h3 {
+    font-weight: 600;
+    color: #2d3748;
+}
+
+.task-list p {
+    color: #4a5568;
+}
+
+/* Last Added Task Highlight */
+.last-added-task {
+    background-color: #f0fff4;
+    border-left: 5px solid #48bb78;
+    padding: 16px;
+    margin-top: 24px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+ .last-added-task h3 {
+    font-weight: 600;
+    color: #2f855a;
+}
+
+.last-added-task p {
+    font-size: 1.1rem;
+    color: #2d3748;
+}
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .task-list, .task-card {
+        padding: 16px;
+    }
+
+    .task-card h2 {
+        font-size: 1.5rem;
+    }
+
+    button {
+        width: 100%;
+    }
+}
+
+/* Animation for Task List Items */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.task-list li {
+    animation: fadeIn 0.5s ease forwards;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #4A90E2;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #edf2f7;
+}
+
+/* Card Shadow Effect */
+.task-card {
+    transition: box-shadow 0.3s ease;
+}
+
+.task-card:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Button Ripple Effect */
+button {
+    position: relative;
+    overflow: hidden;
+}
+
+button::after {
+    content: '';
+    position: absolute;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 50%;
+    transform: scale(0);
+    animation: ripple 0.6s linear;
+    pointer-events: none;
+}
+
+button:active::after {
+    transform: scale(4);
+    opacity: 0;
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
