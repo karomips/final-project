@@ -71,7 +71,7 @@
 
 <style>
 :global(body) {
-    background: linear-gradient(135deg, #111333, #13293d, #194e3c);
+    background: linear-gradient(135deg, #987654, #efdecd, #ffffff);
     background-size: 400% 400%;
     animation: gradientBackground 10s ease infinite;
     font-family: 'Roboto', sans-serif;
@@ -104,7 +104,7 @@
     justify-content: space-between;
     align-items: center;
     padding: .7rem 2rem;
-    background-color: #1d5552;
+    background-color: #836953;
     color: #e0e0e0;
     border-bottom: 2px solid #ffffff;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -119,7 +119,7 @@
 }
 
 .card {
-    background-color: #1d5552;
+    background-color: #836953;
     border-radius: 15px;
     padding: 1.5rem;
     box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
@@ -155,7 +155,7 @@
 }
 
 .task-item {
-    background-color: #1d5552;
+    background-color: #836953;
     border-radius: 12px;
     padding: 1rem;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
@@ -171,8 +171,9 @@
 }
 
 .task-item:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+    background-color: #cd9575; /* Keep the same background color */
+    transform: scale(1.05); /* Slightly scale the element on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Enhance the shadow on hover */
 }
 
 .task-header {
