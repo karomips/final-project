@@ -331,7 +331,7 @@
 
 <div class="container">
     <button on:click={() => showTaskModal.set(true)} class="btn btn-primary">
-        Add Task
+        Add a Schedule
     </button>
     <button on:click={() => showPetModal.set(true)} class="btn btn-secondary">
         Add Pet
@@ -341,7 +341,7 @@
         <div class="modal-overlay">
             <div class="modal">
                 <button class="modal-close" on:click={() => showTaskModal.set(false)}>Close</button>
-                <h2>Add a New Task</h2>
+                <h2>Add a New Schedule</h2>
                 <div class="form-group">
                     <label for="task">Task</label>
                     <input id="task" type="text" bind:value={$taskInput} placeholder="Task name" />
